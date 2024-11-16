@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрация работы приложения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9fa;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .weather-container {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .warning-container {
+            margin-top: 15px;
+            padding: 5px 10px;
+            line-height: 1.5;
+            font-weight: bold;
+            text-align: left;
+            color: red;
+            background: #fff3cd;
+            border-left: 5px solid orange;
+            border-radius: 5px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Погода в вашем городе</h1>
+    <form id="weatherForm">
+        <label for="city">Название города:</label>
+        <input type="text" id="city" placeholder="Введите название города" required>
+
+        <label for="days">Количество дней:</label>
+        <input type="number" id="days" min="1" value="1" required>
+
+        <button type="submit">Получить прогноз погоды</button>
+    </form>
+
+    <div id="weatherContainer" class="weather-container"></div>
+    <div id="warningContainer" class="warning-container"></div> <!-- Новый контейнер для предупреждений -->
+    <p id="errorMessage" class="error-message"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

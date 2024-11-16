@@ -1,12 +1,12 @@
-package main.java.skladanov.weather.service;
+package skladanov.weather.service;
 
 import lombok.extern.slf4j.Slf4j;
-import main.java.skladanov.weather.constants.WarningTemperature;
-import main.java.skladanov.weather.dto.WeatherResponseDto;
-import main.java.skladanov.weather.client.WeatherApiClient;
-import main.java.skladanov.weather.mapper.WeatherMapper;
-import main.java.skladanov.weather.model.ForecastDaily;
 import org.springframework.stereotype.Service;
+import skladanov.weather.client.WeatherApiClient;
+import skladanov.weather.constants.WarningTemperature;
+import skladanov.weather.dto.WeatherResponseDto;
+import skladanov.weather.mapper.WeatherMapper;
+import skladanov.weather.model.ForecastDaily;
 
 import java.util.List;
 
@@ -27,8 +27,10 @@ public class WeatherServiceImpl implements WeatherService {
         for (ForecastDaily forecastDaily : forecasts) {
             warningCheck(forecastDaily);
         }
+        log.info("Передача данных мапперу...");
+        final var response = WeatherMapper.toWeatherResponseDto(forecasts);
         log.info("Передача данных контроллеру...");
-        return WeatherMapper.toWeatherResponseDto(forecasts);
+        return response;
     }
 
     private void warningCheck(ForecastDaily forecastDaily) {

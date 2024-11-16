@@ -1,6 +1,6 @@
-package main.java.skladanov.weather.client;
+package skladanov.weather.client;
 
-import main.java.skladanov.weather.model.ForecastDaily;
+import skladanov.weather.model.ForecastDaily;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.java.skladanov.weather.model;
+package skladanov.weather.model;
 
 import lombok.Data;
 import lombok.Getter;

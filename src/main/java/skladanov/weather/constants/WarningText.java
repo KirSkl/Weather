@@ -1,4 +1,4 @@
-package main.java.skladanov.weather.constants;
+package skladanov.weather.constants;
 
 public class WarningText {
     public static final String FROST = "Внимание! Ожидаются заморозки!";
