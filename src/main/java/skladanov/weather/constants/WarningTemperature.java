@@ -1,4 +1,4 @@
-package main.java.skladanov.weather.constants;
+package skladanov.weather.constants;
 
 public class WarningTemperature {
     public static final int FROST = -5;

@@ -1,10 +1,10 @@
-package main.java.skladanov.weather.mapper;
+package skladanov.weather.mapper;
 
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
-import main.java.skladanov.weather.constants.WarningText;
-import main.java.skladanov.weather.dto.WeatherResponseDto;
-import main.java.skladanov.weather.model.ForecastDaily;
+import skladanov.weather.constants.WarningText;
+import skladanov.weather.dto.WeatherResponseDto;
+import skladanov.weather.model.ForecastDaily;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class WeatherMapper {
 
     public WeatherResponseDto toWeatherResponseDto(List<ForecastDaily> forecasts) {
         log.info("Вызван маппер погоды...");
-        Map<String, String> temperatures = new HashMap<>();
+        Map<String, String> temperatures = new LinkedHashMap<>();
         Set<String> warnings = new HashSet<>();
         WeatherResponseDto weatherResponseDto = new WeatherResponseDto();
         weatherResponseDto.setCity(forecasts.get(0).getCity());
@@ -32,7 +32,7 @@ public class WeatherMapper {
         if (temperature <= 0) {
             return temperature.toString();
         }
-        return "+" + temperature.toString();
+        return "+" + temperature;
     }
 
     private void warningsProceed(ForecastDaily forecastDaily, Set<String> warnings) {

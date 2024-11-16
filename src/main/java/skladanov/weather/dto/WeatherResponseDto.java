@@ -1,4 +1,4 @@
-package main.java.skladanov.weather.dto;
+package skladanov.weather.dto;
 
 import lombok.Data;
 
