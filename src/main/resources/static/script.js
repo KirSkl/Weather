@@ -4,7 +4,7 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
     const city = document.getElementById('city').value;
     const days = document.getElementById('days').value;
 
-    fetch(`http://localhost:8080/forecast?city=${encodeURIComponent(city)}&days=${days}`)
+    fetch(`http://localhost:9090/forecast?city=${encodeURIComponent(city)}&days=${days}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
