@@ -29,7 +29,7 @@ public class WeatherApiClientImpl implements WeatherApiClient {
             localDate = localDate.plusDays(1);
             forecasts.add(new ForecastDaily(
                     city,
-                    String.format("%s, %s-е", localDate.getDayOfWeek(), localDate),
+                    String.format("%s, %s", localDate.getDayOfWeek(), localDate),
                     random.nextInt(-50, 50)));
         }
         return forecasts;

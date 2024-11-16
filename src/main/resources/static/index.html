@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Демонстрация работы приложения</title>
+    <title>Прогноз погоды</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,11 +42,15 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .weather-container {
+        .scrollable-weather-container {
+            overflow-y: auto;
+            max-height: 300px;
             margin-top: 30px;
             padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        }
+        .weather-container {
+            padding: 0;
+            border: none;
         }
         .warning-container {
             margin-top: 15px;
@@ -73,13 +77,16 @@
         <input type="text" id="city" placeholder="Введите название города" required>
 
         <label for="days">Количество дней:</label>
-        <input type="number" id="days" min="1" value="1" required>
+        <input type="number" id="days" min="1" max="100" value="1" required>
+        //реалистичное ограничение в 100 дней, маловероятно, что какие то api дадут информацию на больший период
 
         <button type="submit">Получить прогноз погоды</button>
     </form>
 
-    <div id="weatherContainer" class="weather-container"></div>
-    <div id="warningContainer" class="warning-container"></div> <!-- Новый контейнер для предупреждений -->
+    <div class="scrollable-weather-container">
+        <div id="weatherContainer" class="weather-container"></div>
+    </div>
+    <div id="warningContainer" class="warning-container"></div>
     <p id="errorMessage" class="error-message"></p>
 </div>
 <script src="script.js"></script>
