@@ -1,6 +1,6 @@
 package main.java.skladanov.weather.service;
 
-import main.java.skladanov.weather.Dto.WeatherResponseDto;
+import main.java.skladanov.weather.dto.WeatherResponseDto;
 
 public interface WeatherService {
 
