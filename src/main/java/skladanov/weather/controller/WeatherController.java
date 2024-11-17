@@ -20,7 +20,7 @@ public class WeatherController {
     }
 
     @GetMapping("/forecast")
-    public WeatherResponseDto getWeather(@RequestParam String city, @RequestParam Integer days) {
+    public WeatherResponseDto getWeather(@RequestParam @NotBlank String city, @RequestParam @Positive Integer days) {
         log.info(String.format("Получен GET-запрос: прогноз в городе %s на %s дней", city, days));
         final var response = weatherService.getWeatherForecast(city, days);
         log.info("Отправляю ответ пользователю...");
